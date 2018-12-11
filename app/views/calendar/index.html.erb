@@ -1,0 +1,12 @@
+<% provide(:title, "スケジュール") %>
+<div class="player-background text-white">
+  <div class="title-bar">
+    <h1><%= link_to @team.name, @team, class: "hover-white" %></h1>
+  </div>
+  <div class="container body-container">
+    <div class="calendar" id="calendar"></div>
+    <div id='remote_container' data-team_manager="<%= current_player.team_manager %>"></div>
+    <script type="text/javascript">
+    </script>
+  </div>
+</div>

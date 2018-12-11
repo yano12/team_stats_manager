@@ -1,0 +1,22 @@
+<% provide(:title, 'All teams') %>
+<div class="player-background text-white">
+  <div class="title-bar">
+    <h1>Teams</h1>
+  </div>
+  <div class="container body-container">
+    <%= will_paginate previous_label: ' &lt 前へ', next_label: '次へ &gt' %>
+    
+    <!--  検索拡張機能  -->
+    <p>チーム検索</p>
+    <%= form_tag(teams_path, method: :get) do %>
+      <%= text_field_tag :search %>
+      <%= submit_tag 'チーム検索', name: nil, class: "btn btn-orange" %>
+    <% end %>
+  
+    <ul class="teams">
+      <div class="row flex">
+        <%= render @teams %>
+      </div>
+    </ul>
+    <%= will_paginate previous_label: ' &lt 前へ', next_label: '次へ &gt' %>
+  </div>

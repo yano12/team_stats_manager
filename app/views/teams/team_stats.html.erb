@@ -1,0 +1,36 @@
+<% provide(:title, "Team stats") %>
+<div class="player-background text-white">
+  <div class="title-bar">
+    <h1>STATS</h1>
+  </div>
+  <div class="container body-container">
+    <div class="row">
+      <div class="team-name">
+        <h1><%= link_to @team.name, team_path(@team), class: "hover-white" %></h1>
+      </div>
+      <div class="player-stats">
+        <span class="title"></span>
+      </div>
+      <div>
+        <% if @team.players.any? %>
+          <%= render 'stats' %>
+
+          <script type="text/javascript">
+            var players_count = <%= @team.players.length %>;
+            if (players_count < 10) {
+              $('.sticky_table').css('height', '25vh');
+            } else if (players_count < 15) {
+              $('.sticky_table').css('height', '50vh');
+            }
+          </script>
+          
+        <% end %>
+      </div>
+      <div class="stats-title">
+        <% if @team.players.any? %>
+          <%= render 'stats_anta' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

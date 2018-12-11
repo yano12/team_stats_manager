@@ -1,0 +1,37 @@
+<% provide(:title, "Player messages") %>
+<div class="player-background text-white">
+  <div class="title-bar">
+    <h1>メッセージ</h1>
+  </div>
+  <div class="container body-container">
+  <aside class="col-md-4">
+    <section class="player_info">
+      <div align="center" class="player-gravatar">
+        <%= gravatar_for @player, size: 100 %>
+      </div>
+      <div class="player-profile player-table player-message">
+        <%= render 'profile_for_message' %>
+      </div>
+    </section>
+  </aside>
+  <div class="col-md-8">
+    <section class="message_box">
+      <!-- メッセージ一覧を表示 -->
+      <div id="messages">
+        <%= render @messages %>
+      </div>
+    </section>
+    <script type="text/javascript">
+      var height = 0;
+      $("div.message").each( function() {
+        height += ($(this).height());
+      });
+      $('section.message_box').scrollTop(height);
+    </script>
+    <!-- メッセージ送信フォームを表示 -->
+    <div class="message_form text-black">
+     <%= render 'messages/message_form',
+       {from_player: current_player, to_player: @player, room_id: @room_id} %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,655 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* mixins, variables, etc. */
+
+$gray-medium-light: #eaeaea;
+$white: #fff;
+$black: #000;
+$silver: #C0C0C0;
+$gray: #808080;
+$dark-gray: #111111;
+$light-black: #222222;
+$primary: #000080;
+$secondary: #0083d1;
+$dark-orange: #CC6600;
+$light-orange: #FFDBC9;
+
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
+@mixin heading-font {
+  font-family: 'Catamaran';
+  font-weight: 800 !important;
+}
+
+@mixin body-font {
+  font-family: 'Lato';
+}
+
+/* universal */
+
+.body-container {
+  padding-top: 45px;
+  padding-bottom: 45px;
+}
+
+body {
+  @include body-font;
+  padding-top: 70px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @include heading-font;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+  h1 {
+    margin-bottom: 10px;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+/* typography */
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+/* bootstrap4 */
+
+.d-block {
+  display: block;
+}
+
+.mb-4,
+.my-4 {
+  margin-bottom: 1.5rem !important;
+}
+
+.my-4 {
+  margin-top: 1.5rem !important;
+}
+
+.p-5 {
+  padding: 3rem !important;
+}
+
+.align-items-center {
+  -ms-flex-align: center !important;
+  align-items: center !important;
+}
+
+/* 文字の色 */
+
+.text-white {
+  color: $white;
+}
+
+.text-black {
+  color: $black;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+.mt-5 {
+  margin-top: 3rem !important;
+}
+
+.mb-0 {
+  margin-bottom: 0 !important;
+}
+
+/* float */
+
+.f-right {
+  float: right;
+}
+
+.f-left {
+  float: left;
+}
+
+/* link_to, aタグ */
+
+.hover-white {
+  color: $white;
+  &:hover {
+    color: darken($white, 20%);
+  }
+}
+
+.hover-black {
+  color: $black;
+  &:hover {
+    color: lighten($black, 40%);
+  }
+}
+
+/* flash */
+
+.flash-message {
+  margin-bottom: 0;
+}
+
+/* ヘッダー */
+
+.navbar-custom {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: fade-out($black, 0.1);
+  border :0;
+}
+
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: $white;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+  &:hover {
+    color: $white;
+    text-decoration: none;
+  }
+}
+
+/* footer */
+
+.footer-background {
+  background-color: fade-out($black, 0.1);
+}
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid $gray-medium-light;
+  color: $gray-light;
+  a {
+    color: $gray;
+    &:hover {
+      color: $white;
+    }
+  }
+  small {
+    float: left;
+  }
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 15px;
+    }
+  }
+}
+
+/* TOPページ */
+
+header.masthead {
+  position: relative;
+  overflow: hidden;
+  padding-top: calc(7rem + 72px);
+  padding-bottom: 7rem;
+  background: linear-gradient(0deg, $secondary 0%, $primary 100%);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: scroll;
+  background-size: cover;
+  .masthead-content {
+    z-index: 1;
+    position: relative;
+    .masthead-heading {
+      font-size: 6rem;
+    }
+    .masthead-subheading {
+      font-size: 2rem;
+    }
+  }
+  .bg-circle {
+    z-index: 0;
+    position: absolute;
+    border-radius: 100%;
+    background: linear-gradient(0deg, $primary 0%, $secondary 100%);
+  }
+  .bg-circle-1 {
+    height: 90rem;
+    width: 90rem;
+    bottom: -55rem;
+    left: -55rem;
+  }
+  .bg-circle-2 {
+    height: 50rem;
+    width: 50rem;
+    top: -25rem;
+    right: -25rem;
+  }
+  .bg-circle-3 {
+    height: 20rem;
+    width: 20rem;
+    bottom: -10rem;
+    right: 5%;
+  }
+  .bg-circle-4 {
+    height: 30rem;
+    width: 30rem;
+    top: -5rem;
+    right: 35%;
+  }
+}
+
+@media (min-width: 992px) {
+  header.masthead {
+    padding-top: calc(10rem + 55px);
+    padding-bottom: 10rem;
+    .masthead-content {
+      .masthead-heading {
+        font-size: 8rem;
+      }
+      .masthead-subheading {
+        font-size: 4rem;
+      }
+    }
+  }
+}
+
+/* btn */
+
+.btn-orange {
+  background-color: $dark-orange;
+  &:hover {
+    background-color: lighten($dark-orange, 5%);
+    color: darken($white, 5%);
+  }
+}
+
+.btn-light-orange {
+  background-color: $light-orange;
+  color: $black;
+  &:hover {
+    background-color: darken($light-orange, 5%);
+    color: lighten($black, 5%);
+  }
+}
+
+/* 背景の色 */
+.bg-primary {
+  background-color: $primary !important;
+}
+
+.btn-secondary {
+  background-color: $secondary;
+  border-color: $secondary;
+  &:active,
+  &:focus,
+  &:hover {
+    background-color: darken($secondary, 10%) !important;
+    border-color: darken($secondary, 10%) !important;
+  }
+  &:focus {
+    box-shadow: 0 0 0 0.2rem fade-out($secondary, 0.5);
+  }
+}
+
+.btn-xl {
+  text-transform: uppercase;
+  padding: 1.5rem 3rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+}
+
+.bg-black {
+  background-color: $black !important;
+}
+
+.rounded-pill {
+  border-radius: 5rem;
+}
+
+/* miscellaneous */
+
+.hide {
+  display: none;
+}
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}
+
+/* gravatar */
+
+.gravatar_edit {
+  margin-top: 15px;
+}
+
+.stats {
+  margin-top: 0;
+  padding: 0;
+  a {
+    float: left;
+    padding: 0 10px;
+    border-left: 1px solid $gray-lighter;
+    color: gray;
+    &:first-child {
+      padding-left: 0;
+      border: 0;
+    }
+    &:hover {
+      text-decoration: none;
+      color: $white;
+    }
+  }
+  strong {
+    display: block;
+  }
+}
+
+.team_avatars {
+  overflow: auto;
+  margin-top: 10px;
+  .gravatar {
+    margin: 1px 1px;
+  }
+  a {
+    padding: 0;
+  }
+}
+
+.teams.follow {
+  padding: 0;
+}
+
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+input {
+  height: auto !important;
+}
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
+}
+
+.checkbox {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  span {
+    margin-left: 20px;
+    font-weight: normal;
+  }
+}
+
+#session_remember_me, #player_team_manager, #player_follow_notification {
+  width: auto;
+  margin-left: 0;
+}
+
+/* Players */
+
+.players {
+  list-style: none;
+  margin: 0;
+  padding: 30px 0 0 0;
+  li.player-index {
+    overflow: auto;
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+    border-bottom: 1px solid $gray-lighter;
+  }
+  .name {
+    display: block;
+    margin-left: 60px;
+    img {
+      display: block;
+      padding: 5px 0;
+    }
+  }
+}
+
+/* Teams */
+
+.teams {
+  list-style: none;
+  margin: 0;
+  padding: 30px 0 0 0;
+  h3 {
+    display: block;
+    text-align: center;
+  }
+}
+
+/* microposts */
+
+.dark-gray {
+  background-color: $dark-gray;
+}
+
+.light-black {
+  background-color: $light-black;
+}
+
+span.picture {
+  margin-top: 10px;
+  input {
+    border: 0;
+  }
+}
+
+/* メッセージ機能 */
+
+.message-player {
+  margin-left: 10px;
+}
+
+section.message_box {
+  padding: 10px;
+  border: 1px solid $gray-light;
+  background-color: $light-black;
+  overflow: scroll;
+  #messages {
+    height: 500px;
+  }
+}
+
+div.message_form {
+  padding-top: 10px;
+}
+
+#message_sender {
+  font-size: 1.1em;
+}
+
+#message_content {
+  font-size: 1.0em;
+}
+
+/* followボタン */
+
+.follow-btn {
+  padding-top: 10px;
+}
+
+/* player show */
+
+.player-gravtar {
+}
+
+.title-bar {
+  background-color: $dark-gray;
+  padding: 30px 0;
+  h1 {
+    text-align: center;
+  }
+}
+
+.player-background {
+  background-color: $black;
+  margin: 0 auto;
+  h1, .p-center {
+    text-align: center;
+  }
+}
+
+.player-number {
+  margin-top: 100px;
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.player-position {
+  font-size: 20px;
+}
+
+/* stats-title */
+
+.title {
+  display: inline-block;
+  background-color: $white;
+  color: $black;
+}
+
+ul.txt-stats-anta {
+  border:1px solid red;
+  padding:0;
+  font-size:0px;
+}
+
+ul.txt-stats-anta li {
+  display: inline-block;
+  text-align: center;
+  font-size:14px;
+  margin-right: 20px;
+  margin-left: 5px;
+}
+
+/* table */
+
+.player-table {
+  margin-top: 100px;
+}
+
+.table-title {
+  font-weight: bold;
+  font-size: 30px;
+}
+
+th {
+  background-color: $dark-gray;
+}
+
+td {
+  background-color: $light-black;
+}
+
+/* scroll */
+
+.sticky_table {
+  display: block;
+  position: relative;
+  overflow: scroll;
+  width: calc(100vw - 3.0rem);
+  height: calc(75vh);
+  border-collapse: collapse;
+  font-size: 0;
+}
+
+.sticky_table thead, 
+.sticky_table tbody {
+  display: block;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.sticky_table th,
+.sticky_table td {
+  display: inline-block;
+  width: 8.0rem;
+  font-size: 1.0rem;
+}
+
+.sticky_table tbody th {
+  position: -webkit-sticky;
+  position: sticky;
+  left: 0;
+  z-index: 1;
+}
+
+.sticky_table thead {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.sticky_table thead th.blank {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 3;
+}
+
+/* calendar */
+
+.team-calendar {
+  text-align: center;
+}
+
+.event-delete {
+  margin-top: 10px;
+}
+
+/* comment */
+
+.aside-post {
+  margin-top: 60px;
+}
