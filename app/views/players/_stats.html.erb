@@ -1,7 +1,6 @@
 <table style="font-size: 12px" class="table table-bordered">
   <thead>
     <tr>
-      <th class="initial-stats" data-tips="背番号">NO</th>
       <th class="initial-stats" data-tips="試合数">G</th>
       <th class="initial-stats" data-tips="総プレイ時間">MIN</th>
       <th class="initial-stats" data-tips="平均プレイ時間">MINPG</th>
@@ -32,7 +31,6 @@
   </thead>
   <tbody>
     <tr>
-      <td><%= @player.number %></td>
       <td><%= @player.game_count %></td>
       <td><%= @player.play_time %></td>
       <td><%= @player.minpg.round(1) %></td>

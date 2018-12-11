@@ -1,0 +1,37 @@
+<div class="title-bar">
+  <h1>
+    <%= link_to @player.team.name, team_path(@player.team), class: "hover-white" %>
+  </h1>
+</div>
+<div class="player-background text-white body-container">
+  <div class="container">
+    <div class="row">
+      <div align="center" class="player-gravatar">
+        <%= gravatar_for @player, size: 200 %>
+      </div>
+      
+      <p class="player-number p-center"><%= @player.number %></p>
+      <h1><%= @player.name %></h1>
+      <p class="player-position p-center">ポジション/<%= @player.position %></p>
+        
+      <div class="player-profile player-table">
+        <%= render 'players/profile' %>
+      </div>
+      
+      <div class="player-average player-table">
+        <%= render 'players/average' %>
+      </div>
+      
+      <div class="player-stats player-table">
+        <p class="table-title p-center">STATS</p>
+        <p class="p-center">個人成績</p>
+        <div class="table-responsive">
+          <%= render 'players/stats' %>
+        </div>
+      </div>
+      <div class="stats-title">
+        <%= render 'teams/stats_anta' %>
+      </div>
+    </div>
+  </div>
+</div>

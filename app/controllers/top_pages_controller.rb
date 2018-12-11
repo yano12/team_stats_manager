@@ -1,8 +1,9 @@
 class TopPagesController < ApplicationController
   def home
     if logged_in?
-      @micropost = current_player.microposts.build
-      @feed_items = current_team.feed.paginate(page: params[:page])
+      @player = current_player
+      @team = @player.team
+      redirect_to root_url and return unless @player.activated?
     end
   end
   

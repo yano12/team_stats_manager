@@ -36,14 +36,6 @@ end
 
 teams = Team.all
 
-
-# マイクロポスト
-players = Player.order(:created_at).take(6)
-50.times do
-  content = Faker::Lorem.sentence(5)
-  players.each { |p| p.microposts.create!(content: content, team_id: p.team_id) }
-end
-
 # リレーションシップ
 team  = teams.first
 following = teams[2..50]

@@ -18,11 +18,8 @@
               Account <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
-              <li><%= link_to "マイページ", player_path(current_player) %></li>
               <li><%= link_to "プロフィール編集", edit_player_path(current_player) %></li>
-              <li><%= link_to "個人スタッツ", edit_stats_player_path(current_player) %></li>
-              <li><%= link_to "メッセージ", message_player_path(current_player) %></li>
-              <li><%= link_to "スケジュール", calendar_team_path(current_team) %></li>
+              <li><%= link_to "スタッツ入力", edit_stats_player_path(current_player) %></li>
             </ul>
           </li>
           <li class="dropdown">
@@ -31,6 +28,7 @@
             </a>
             <ul class="dropdown-menu">
               <li><%= link_to "マイチーム", team_path(current_team) %></li>
+              <li><%= link_to "スケジュール", calendar_team_path(current_team) %></li>
               <% if team_manager? %>
                 <li><%= link_to "チーム編集", edit_team_path(current_team) %></li>
               <% end %>
