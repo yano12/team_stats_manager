@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root  'top_pages#home'
-  get   '/contact',  to: "top_pages#contact"
+  #get   '/contact',  to: "top_pages#contact"
   get   '/signup',   to: "players#new"
   post  '/signup',   to: "players#create"
   get    '/login',   to: 'sessions#new'
@@ -18,21 +18,22 @@ Rails.application.routes.draw do
   end
   resources :players do 
     member do
-      get :message, :message_show, :edit_stats
+      #get :message, :message_show, 
+      get   :edit_stats
       patch :update_stats
     end
   end
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
-  resources :microposts do
+  #resources :microposts do
     # コメント機能用のルーティング
-    resources :comments, except: [:index,:show] do
+  #  resources :comments, except: [:index,:show] do
       # メンバールーティングを追加
-      member do
-        get :reply
-      end
-    end
-  end
+  #    member do
+  #      get :reply
+  #    end
+  #  end
+  #end
   resources :relationships,       only: [:create, :destroy]
   # RSSフィード用のルーティング
   resources :feeds, only: [:index], defaults: { format: :rss }
