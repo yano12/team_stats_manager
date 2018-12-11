@@ -1,8 +1,8 @@
-# Team App
+# Team Stats Manager
 
-# team_app_ver2
+# team_stats_manager
 This is the application for those who play sports.
-You can manage your team, communicate with other teams, and get information about other teams.
+You can manage your team stats.
 
 # Dependency
 rails 5.1.6
