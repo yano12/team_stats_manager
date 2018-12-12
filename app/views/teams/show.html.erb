@@ -32,11 +32,14 @@
           <%= render 'stats' %>
           
           <script type="text/javascript">
+            hsize = $(window).height();
             var players_count = <%= @team.players.length %>;
-            if (players_count < 10) {
+            if (players_count < 6) {
               $('.sticky_table').css('height', '25vh');
-            } else {
-              $('.sticky_table').css('height', '50vh');
+            } else if (players_count < 10) {
+              $('.sticky_table').css('height', '40vh');
+            } else if (players_count < 15) {
+              $('.sticky_table').css('height', '55vh');
             }
           </script>
           
