@@ -56,6 +56,7 @@ class TeamsController < ApplicationController
   
   def following
     @title = "Following"
+    @header = "フォローしているチーム"
     @team  = Team.find(params[:id])
     @teams = @team.following.paginate(page: params[:page])
     render 'show_follow'
@@ -63,6 +64,7 @@ class TeamsController < ApplicationController
 
   def followers
     @title = "Followers"
+    @header = "フォロワー"
     @team  = Team.find(params[:id])
     @teams = @team.followers.paginate(page: params[:page])
     render 'show_follow'

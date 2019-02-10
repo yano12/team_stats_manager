@@ -8,12 +8,14 @@
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <%= render 'team_form'%>
+        <!--
         <div class="gravatar_edit">
-          <%= gravatar_for @team %>
+          <%#= gravatar_for @team %>
           <a href="http://gravatar.com/emails" target="_blank" rel="noopener" class="hover-white">
             <br>画像を変更
           </a>
         </div>
+        -->
         <%= link_to "チームを削除する", @team, method: :delete,
                                       data: { confirm: "You sure?" },
                                       class: "hover-white f-right" %>

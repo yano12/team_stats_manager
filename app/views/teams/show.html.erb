@@ -6,9 +6,11 @@
   <div class="container body-container">
     <div class="row">
       <div class="team-info">
+        <!--
         <div align="center" class="team-gravatar">
-          <%= gravatar_for @team, size: 300 %>
+          <%#= gravatar_for @team, size: 300 %>
         </div>
+        -->
         <p></p>
       </div>
       <section class="stats">
@@ -20,33 +22,35 @@
         <% end %>
       </div>
       <% if @team.players.any? %>
-        <h2 class="my-4">メンバー (<%= @team.players.count %>)</h2>
-        <%= will_paginate @players, previous_label: ' &lt 前へ', next_label: '次へ &gt' %>
-        <ol class="players">
-          <%= render @players %>
-        </ol>
-        <%= will_paginate @players, previous_label: ' &lt 前へ', next_label: '次へ &gt' %>
-        
-        <div class="player-stats player-table">
-          <p class="table-title p-center">STATS</p>
-          <%= render 'stats' %>
+        <section>
+          <h2 class="my-4 center">メンバー (<%= @team.players.count %>)</h2>
+          <ol class="players">
+            <%= render @players %>
+          </ol>
+          <%= will_paginate @players, previous_label: ' &lt 前へ', next_label: '次へ &gt' %>
+        </section>
+        <section>
+          <div class="player-stats player-table">
+            <p class="table-title p-center">STATS</p>
+            <%= render 'stats' %>
+            
+            <script type="text/javascript">
+              hsize = $(window).height();
+              var players_count = <%= @team.players.length %>;
+              if (players_count < 6) {
+                $('.sticky_table').css('height', '25vh');
+              } else if (players_count < 10) {
+                $('.sticky_table').css('height', '40vh');
+              } else if (players_count < 15) {
+                $('.sticky_table').css('height', '55vh');
+              }
+            </script>
           
-          <script type="text/javascript">
-            hsize = $(window).height();
-            var players_count = <%= @team.players.length %>;
-            if (players_count < 6) {
-              $('.sticky_table').css('height', '25vh');
-            } else if (players_count < 10) {
-              $('.sticky_table').css('height', '40vh');
-            } else if (players_count < 15) {
-              $('.sticky_table').css('height', '55vh');
-            }
-          </script>
-          
-        </div>
-        <div class="stats-title">
-          <%= render 'stats_anta' %>
-        </div>
+          </div>
+          <div class="stats-title">
+            <%= render 'stats_anta' %>
+          </div>
+        </section>
       <% end %>
     </div>
   </div>

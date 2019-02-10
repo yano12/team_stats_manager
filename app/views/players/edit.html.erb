@@ -51,12 +51,14 @@
         
           <%= f.submit '変更を保存する', class: "btn btn-orange" %>
         <% end %>
+        <!--
         <div class="gravatar_edit">
-          <%= gravatar_for @player %>
+          <%#= gravatar_for @player %>
           <a href="http://gravatar.com/emails" target="_blank" rel="noopener" class="hover-white">
             <br>画像を変更
           </a>
         </div>
+        -->
         <%= link_to "アカウントを削除する", @player, method: :delete,
                                       data: { confirm: "You sure?" },
                                       class: "hover-white f-right" %>
