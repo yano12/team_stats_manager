@@ -1,17 +1,79 @@
 <% if logged_in? %>
   <%= render 'players/home_show' %>
 <% else %>
-  <header class="masthead text-center text-white">
-    <div class="masthead-content">
-      <div class="container">
-        <h1 class="masthead-heading mb-0">Team App</h1>
-        <h2 class="masthead-subheading mb-0">Will Help Your Team  Stats Management</h2>
-        <%= link_to "新規登録", team_login_path, class: "btn btn-default btn-xl rounded-pill mt-5" %>
+  <div class="top-page-bg">
+    <div class="bg-text">
+      <h1 class="top-page-title">
+        Team App
+      </h1>
+      <p class="top-page-sub">今日の試合のスタッツを入力しましょう</p>
+    </div>
+    <div>
+      <%= link_to "新規登録して始める", team_login_path, class: "btn btn-default signup-btn" %>
+    </div>
+  </div>
+  
+  <div class="top-page-bg-min">
+      <h2 class="top-page-title-min">
+        Team App
+      </h2>
+      <%= link_to "新規登録", team_login_path, class: "btn btn-default" %>
+  </div>
+  
+  <section>
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-sm-6 col-sm-push-6">
+          <div class="p-5">
+            <%= image_tag("gui-2311261_1280.png", alt: "graph", class: "img-responsive img-circle") %>
+          </div>
+        </div>
+        <div class="col-sm-6 col-sm-pull-6">
+          <div class="p-5">
+            <!--h2 class="display-4">About Team App...</h2-->
+            <p>Team Appでは、チームでスタッツを管理し共有することができます。
+              その日の試合におけるプレイタイムや得点などを入力するとアプリが自動で平均プレイタイムや平均得点を計算してくれます。</p>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="bg-circle-1 bg-circle"></div>
-    <div class="bg-circle-2 bg-circle"></div>
-    <div class="bg-circle-3 bg-circle"></div>
-    <div class="bg-circle-4 bg-circle"></div>
-  </header>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-sm-6">
+          <div class="p-5">
+            <%= image_tag("magnifying-glass-1083378_1280.png", alt: "search", class: "img-responsive img-circle") %>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="p-5">
+            <!--h2 class="display-4">Search other teams and players!</h2-->
+            <p>Team Appではアプリを利用している他のチームや選手の情報を見ることができます。
+              気になるチームを検索してみましょう。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-sm-6 col-sm-push-6">
+          <div class="p-5">
+            <%= image_tag("calendar-1763587_1280.png", alt: "calendar", class: "img-responsive img-circle") %>
+          </div>
+        </div>
+        <div class="col-sm-6 col-sm-pull-6">
+          <div class="p-5">
+            <!--h2 class="display-4">Search teams and players!</h2-->
+            <p>Team Appではチームのスケジュールを管理し共有することができます。
+              カレンダーに練習や試合の日程を入力しチームで共有しましょう。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 <% end %>

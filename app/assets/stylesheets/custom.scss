@@ -223,70 +223,46 @@ footer {
 
 /* TOPページ */
 
-header.masthead {
-  position: relative;
-  overflow: hidden;
-  padding-top: calc(7rem + 72px);
-  padding-bottom: 7rem;
-  background: linear-gradient(0deg, $secondary 0%, $primary 100%);
+.top-page-bg, .top-page-bg-min {
+  background-image: url(basketball-1081882_1920.jpg);
   background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment: scroll;
   background-size: cover;
-  .masthead-content {
-    z-index: 1;
-    position: relative;
-    .masthead-heading {
-      font-size: 6rem;
-    }
-    .masthead-subheading {
-      font-size: 2rem;
-    }
-  }
-  .bg-circle {
-    z-index: 0;
-    position: absolute;
-    border-radius: 100%;
-    background: linear-gradient(0deg, $primary 0%, $secondary 100%);
-  }
-  .bg-circle-1 {
-    height: 90rem;
-    width: 90rem;
-    bottom: -55rem;
-    left: -55rem;
-  }
-  .bg-circle-2 {
-    height: 50rem;
-    width: 50rem;
-    top: -25rem;
-    right: -25rem;
-  }
-  .bg-circle-3 {
-    height: 20rem;
-    width: 20rem;
-    bottom: -10rem;
-    right: 5%;
-  }
-  .bg-circle-4 {
-    height: 30rem;
-    width: 30rem;
-    top: -5rem;
-    right: 35%;
+  text-align:  center;    /* 文字中央寄せ */
+  padding:  150px;        /* 余白指定 */
+  border: solid 2px;      /* 枠線指定 */
+}
+
+.bg-text {
+  background-color: rgba(0,0,0,.4);
+  display: inline-block;
+  padding: 40px 20px;
+  color: $white;
+  margin-bottom: 30px;
+}
+
+.top-page-title-min {
+  text-shadow: 2px 2px 0 $black;
+  color: $white;
+}
+
+.top-page-sub {
+  padding-top: 30px;
+}
+
+.signup-btn {
+  margin-top: 3rem;
+  border-radius: 1rem;
+}
+
+@media screen and (max-width: 624px) {
+  .top-page-bg {
+    display: none;
   }
 }
 
-@media (min-width: 992px) {
-  header.masthead {
-    padding-top: calc(10rem + 55px);
-    padding-bottom: 10rem;
-    .masthead-content {
-      .masthead-heading {
-        font-size: 8rem;
-      }
-      .masthead-subheading {
-        font-size: 4rem;
-      }
-    }
+@media screen and (min-width: 624px) {
+  .top-page-bg-min {
+    display: none;
   }
 }
 
@@ -328,20 +304,8 @@ header.masthead {
   }
 }
 
-.btn-xl {
-  text-transform: uppercase;
-  padding: 1.5rem 3rem;
-  font-size: 1.5rem;
-  font-weight: 700;
-  letter-spacing: 0.1rem;
-}
-
 .bg-black {
   background-color: $black !important;
-}
-
-.rounded-pill {
-  border-radius: 5rem;
 }
 
 /* miscellaneous */
