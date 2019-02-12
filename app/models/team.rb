@@ -33,13 +33,13 @@ class Team < ApplicationRecord
   # ユーザーをフォローする
   def follow(other_team, other_team_players)
     following << other_team
-    Relationship.send_follow_email(other_team, self, other_team_players)
+    #Relationship.send_follow_email(other_team, self, other_team_players)
   end
 
   # ユーザーをフォロー解除する
   def unfollow(other_team, other_team_players)
     active_relationships.find_by(followed_id: other_team.id).destroy
-    Relationship.send_unfollow_email(other_team, self, other_team_players)
+    #Relationship.send_unfollow_email(other_team, self, other_team_players)
   end
 
   # 現在のユーザーがフォローしてたらtrueを返す
